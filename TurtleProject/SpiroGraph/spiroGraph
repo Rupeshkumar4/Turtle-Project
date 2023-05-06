@@ -1,0 +1,52 @@
+import turtle
+from turtle import  Screen
+import random
+
+# turtle = Turtle()
+
+turtle.colormode(255)
+
+turtle.speed("fastest")
+turtle.pensize(2)
+# r = 100
+
+# def randomColor():
+#     r = random.randint(0,255)
+#     b = random.randint(0,255)
+#     g = random.randint(0,255)
+#     randomColor = (r,g,b)
+#     return randomColor
+
+# for i in range(360):
+#     turtle.pencolor(randomColor) 
+#     turtle.circle(r)
+#     turtle.right(i+10)
+
+def randomColor():
+    r = random.randint(0,255)
+    b = random.randint(0,255)
+    g = random.randint(0,255)
+    randomColor = (r,g,b)
+    return randomColor
+def drawSpiroGraph(gapCircle):
+    for _ in range(int(360/gapCircle)):
+        turtle.color(randomColor()) 
+        turtle.circle(100)
+        current_heading = turtle.heading()
+        turtle.setheading(current_heading + gapCircle)
+
+drawSpiroGraph(5)
+
+
+
+
+
+
+
+
+
+turtle.penup()
+turtle.home()
+screen = Screen()
+
+screen.exitonclick()
